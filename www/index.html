@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>一个网站</title>
+</head>
+<body>
+    <h1 style="color:green;"> 你好！</h1>
+    <p>这是一个从本地硬盘读取并渲染出来的html文件</p>
+    <hr>
+    <h2>登陆系统</h2>
+
+    <!--
+    ============ <form> 表单标签 ============
+    action="/login"  →  表单数据提交到哪个URL地址（这里提交到 /login 路径）
+    method="POST"    →  提交方式：
+                           GET  = 数据拼接在URL后面（明文可见，有长度限制，不安全）
+                           POST = 数据放在请求体里（更安全，无长度限制，推荐用于登录）
+    -->
+    <form action="/login" method="POST">
+
+        <!--
+        ============ <input> 输入框标签 ============
+        type="text"     → 文本框（可输入单行文字）
+        type="submit"   → 提交按钮（点击后将表单数据发送到 action 指定的地址）
+        name="xxx"      → 给这个输入框起个名字，服务器通过这个名字来获取用户输入的值
+        value="登录"    → 按钮上显示的文字
+        -->
+        账号: <input type="text" name="username">
+
+        <!-- <br> 是换行标签（Break），在页面上产生一个换行，它是自闭合标签，没有结束标签 -->
+        <br><br>
+        密码: <input type="text" name="password">
+        <br><br>
+
+        <input type="submit" value="登录">
+    </form>
+
+    <!-- 提交流程：用户点"登录" → 浏览器收集 username 和 password 的值 → 以 POST 方式发送到 /login → 服务器处理 -->
+    <hr>
+    <p>再见！</p>
+
+</body>
+</html>
